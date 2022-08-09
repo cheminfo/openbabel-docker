@@ -4,10 +4,10 @@ import fastifySensible from '@fastify/sensible';
 import fastifySwagger from '@fastify/swagger';
 import Fastify from 'fastify';
 
-import babelV1 from './babelV1.js';
+import v1 from './v1/v1.js';
 
 const fastify = Fastify({
-  logger: true,
+  logger: false,
 });
 
 fastify.register(fastifyCors, {
@@ -39,7 +39,7 @@ await fastify.register(fastifySwagger, {
   exposeRoute: true,
 });
 
-babelV1(fastify);
+v1(fastify);
 
 await fastify.ready();
 fastify.swagger();
