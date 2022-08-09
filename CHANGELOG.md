@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.0.1](https://github.com/cheminfo/openbabel-docker/compare/v1.0.0...v1.0.1) (2022-08-09)
+
+
+### Bug Fixes
+
+* output format ([63030ad](https://github.com/cheminfo/openbabel-docker/commit/63030add4fa0ec5b05a213ed7e36e702ea822674))
+* ph as a string ([a58f94b](https://github.com/cheminfo/openbabel-docker/commit/a58f94be97b8bbf3671ca36fd3417f1c8d650a66))
+* route with outputFormats ([8ab5c8d](https://github.com/cheminfo/openbabel-docker/commit/8ab5c8da8e243c3773e1d78517ad2dc0477b7e13))
+* schema and descrption ([0380a50](https://github.com/cheminfo/openbabel-docker/commit/0380a50b83cbeac1af75ee8f3549e64cb4a1817f))
+
 ## 1.0.0 (2022-08-09)
 
 
