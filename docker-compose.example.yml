@@ -1,7 +1,8 @@
 version: "2.2"
 services:
   openbabel:
-    build: ./docker
+    #    build: ./docker
+    image: ghcr.io/cheminfo/openbabel-docker:head
     restart: always
     ports:
       - 127.0.0.1:20808:20808
