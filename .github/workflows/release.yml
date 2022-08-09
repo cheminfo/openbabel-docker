@@ -16,7 +16,7 @@ jobs:
       - uses: google-github-actions/release-please-action@v3
         id: release
         with:
-          token: ${{ secrets.github-token }}
+          token: ${{ secrets.BOT_TOKEN }}
           release-type: node
           package-name: ${{ env.PACKAGE_NAME }}
           bump-minor-pre-major: true
