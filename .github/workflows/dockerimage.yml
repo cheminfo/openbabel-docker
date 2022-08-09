@@ -4,13 +4,13 @@ on:
   workflow_dispatch:
     inputs:
       ref:
-        description: 'GitHub ref to checkout'
+        description: "GitHub ref to checkout"
         required: true
         default: main
       tag:
         description: 'Docker tag to push (do NOT use "latest" or version numbers)'
         required: true
-        default: 'HEAD'
+        default: "HEAD"
   push:
     tags:
       - v*
@@ -25,6 +25,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+
+      - name: go to docker folder
+        run: cd docker
 
       - name: Build image
         run: docker build . --tag $IMAGE_NAME --label "runnumber=${GITHUB_RUN_ID}"
