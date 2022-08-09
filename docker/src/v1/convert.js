@@ -16,25 +16,34 @@ export default function convert(fastify) {
           type: 'object',
           properties: {
             input: {
+              description: 'Input file',
               format: 'binary',
             },
             inputFormat: {
+              description: 'Input format',
               type: 'string',
               enum: getInputFormats(),
             },
             outputFormat: {
+              description: 'Output format',
               type: 'string',
               enum: getOutputFormats(),
             },
             hydrogens: {
+              description:
+                'Specify if hydrogens should not be touched (leave empty), deleted or added',
               type: 'string',
-              enum: ['Delete', 'Add'],
+              enum: ['', 'Delete', 'Add'],
             },
             coordinates: {
+              description:
+                'Specify if 3D coordinates should not be touched (leave empty), calculate for 2D or 3D',
               type: 'string',
               enum: ['', '2D', '3D'],
             },
             ph: {
+              description:
+                'pH at which the molecule should be protonated, leave empty for no change',
               type: 'string',
             },
           },
