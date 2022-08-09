@@ -35,7 +35,7 @@ export default function convert(fastify) {
               enum: ['', '2D', '3D'],
             },
             ph: {
-              type: 'boolean',
+              type: 'string',
             },
           },
         },
