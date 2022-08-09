@@ -1,6 +1,6 @@
 {
   "name": "openbabel-docker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "openbabel docker web service",
   "private": true
 }
