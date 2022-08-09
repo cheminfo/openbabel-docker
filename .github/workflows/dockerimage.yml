@@ -23,11 +23,11 @@ jobs:
   build:
     name: Build and push image to registry
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./docker
     steps:
       - uses: actions/checkout@v3
-
-      - name: go to docker folder
-        run: cd docker
 
       - name: Build image
         run: docker build . --tag $IMAGE_NAME --label "runnumber=${GITHUB_RUN_ID}"
