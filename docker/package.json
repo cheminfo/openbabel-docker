@@ -5,12 +5,12 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "dev": "DEBUG=* nodemon -r dotenv/config src/index.js",
     "eslint": "eslint src",
     "eslint-fix": "npm run eslint -- --fix",
     "prettier": "prettier --check src",
     "prettier-write": "prettier --write src",
     "start": "DEBUG=* node -r dotenv/config src/index.js",
-    "dev": "DEBUG=* nodemon -r dotenv/config src/index.js",
     "test": "npm run test-only && npm run eslint && npm run prettier",
     "test-only": "vitest run --globals --coverage"
   },
