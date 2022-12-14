@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/cheminfo/openbabel-docker/compare/v1.0.1...v1.1.0) (2022-12-14)
+
+
+### Features
+
+* add convert route ([1ba8ef3](https://github.com/cheminfo/openbabel-docker/commit/1ba8ef3f65ce920297833c9d7065c6280803e794))
+
 ## [1.0.1](https://github.com/cheminfo/openbabel-docker/compare/v1.0.0...v1.0.1) (2022-08-09)
 
 
