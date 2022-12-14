@@ -1,8 +1,8 @@
 import { spawnSync } from 'child_process';
 
-import getBabel from './getBabel.js';
-import getInputFormats from './getInputFormats.js';
-import getOutputFormats from './getOutputFormats.js';
+import getBabel from './utils/getBabel.js';
+import getInputFormats from './utils/getInputFormats.js';
+import getOutputFormats from './utils/getOutputFormats.js';
 
 const BABEL = getBabel();
 
@@ -11,6 +11,9 @@ export default function convert(fastify) {
     '/v1/convert',
     {
       schema: {
+        summary: 'Convert chemical file formats',
+        description:
+          'Convert between various chemical file formats using OpenBabel',
         consumes: ['multipart/form-data'],
         body: {
           type: 'object',
@@ -59,7 +62,7 @@ async function doConvert(request, response) {
   let flags = [];
   if (body.hydrogens && body.hydrogens === 'Delete') flags.push('-d');
   if (body.hydrogens && body.hydrogens === 'Add') flags.push('-h');
-  //  if (body.ph) flags.push(`-p ${body.ph}`);
+  if (body.ph) flags.push(`-p ${body.ph}`);
   if (body.coordinates && body.coordinates === '2D') flags.push('--gen2D');
   if (body.coordinates && body.coordinates === '3D') flags.push('--gen3D');
   flags.push(`-i${body.inputFormat.replace(/ .*/, '')}`);
@@ -69,6 +72,7 @@ async function doConvert(request, response) {
     stdio: ['pipe', 'pipe', 'pipe'],
     input: body.input,
     encoding: 'utf-8',
+    timeout: 10000,
   });
 
   response.send({ result: result.stdout, log: result.stderr });
