@@ -7,8 +7,8 @@ export default function outputFormats(fastify) {
     method: ['GET', 'POST'],
     handler: getFormats,
     schema: {
-      summary: 'List of input formats',
-      description: 'Get the list of all the allowed input formats',
+      summary: 'List of output formats',
+      description: 'Get the list of all the allowed output formats',
     },
   });
 }
