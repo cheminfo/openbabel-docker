@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.1](https://github.com/cheminfo/openbabel-docker/compare/v1.1.0...v1.1.1) (2024-01-22)
+
+
+### Bug Fixes
+
+* describe of outputFormats route ([7995af5](https://github.com/cheminfo/openbabel-docker/commit/7995af5aa7f8c4d9d7a32581f48a3f2b1a67c00e))
+* throw error is failed conversion ([574af4c](https://github.com/cheminfo/openbabel-docker/commit/574af4c50e3a961609a705fc2f7bb15c4fde2fc6))
+
 ## [1.1.0](https://github.com/cheminfo/openbabel-docker/compare/v1.0.1...v1.1.0) (2022-12-14)
 
 
