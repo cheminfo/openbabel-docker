@@ -1,8 +1,8 @@
 version: "2.2"
 services:
   openbabel:
-    #    build: ./docker
-    image: ghcr.io/cheminfo/openbabel-docker:head
+    build: ./docker
+    # image: ghcr.io/cheminfo/openbabel-docker:head
     restart: always
     ulimits:
       core: 0
