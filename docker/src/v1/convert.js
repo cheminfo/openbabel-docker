@@ -68,12 +68,16 @@ async function doConvert(request, response) {
   flags.push(`-i${body.inputFormat.replace(/ .*/, '')}`);
   flags.push(`-o${body.outputFormat.replace(/ .*/, '')}`);
 
-  const result = spawnSync(BABEL, flags, {
-    stdio: ['pipe', 'pipe', 'pipe'],
-    input: body.input,
-    encoding: 'utf-8',
-    timeout: 10000,
-  });
+  try {
+    const result = spawnSync(BABEL, flags, {
+      stdio: ['pipe', 'pipe', 'pipe'],
+      input: body.input,
+      encoding: 'utf-8',
+      timeout: 10000,
+    });
 
-  response.send({ result: result.stdout, log: result.stderr });
+    response.send({ result: result.stdout, log: result.stderr });
+  } catch (e) {
+    response.send({ result: {}, log: e.toString() });
+  }
 }
